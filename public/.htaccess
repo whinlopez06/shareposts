@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+  Options -Multiviews
+
+  #allows url rewrite
+  RewriteEngine On
+
+  #root url directory. not including the localhost or domain in prod
+  RewriteBase /shareposts/public
+
+  #allow directory and file search
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+  #request will route to index.php with url params
+  RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
+
+</IfModule>

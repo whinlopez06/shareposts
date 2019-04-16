@@ -1,0 +1,2 @@
+#make the app folder access forbidden. make the - to + to make it visible
+Options -Indexes
